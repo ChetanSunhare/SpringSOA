@@ -1,0 +1,24 @@
+<aura:component controller='ShowAccountController'>
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	
+     <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer">
+        
+        <thead>          
+            <tr class="slds-text-heading--small"> 
+                <th scope="col"><span class="slds-truncate">Id</span></th>
+                <th scope="col"><span class="slds-truncate">Account Name</span></th>
+                <th scope="col"><span class="slds-truncate">Phone</span></th>      
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.accounts}" var="accounts">
+                <tr>
+                    <th scope="row">{!accounts.Id}</th>                    
+                    <td>{!accounts.Name}</td>                
+                    <td>{!accounts.Phone}</td>                     
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>
